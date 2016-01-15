@@ -10,7 +10,7 @@ import static org.fluentlenium.assertj.FluentLeniumAssertions.assertThat;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class IntegrationTest extends FluentTest {
+public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
   public WebDriver getDefaultDriver() {
     return webDriver;
