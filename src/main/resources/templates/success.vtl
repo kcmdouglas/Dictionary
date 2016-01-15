@@ -1,0 +1,16 @@
+<h1>Success!</h1>
+
+#if ($word)
+  <h3> Your new word has been carefully inscribed into your dictionary. </h3>
+#else
+  <h3>Your definition has been gingerly written beneath your word. Future generations will sing of your brilliance. </h3>
+#end
+
+<a href="/words"class="btn btn-info">View Your Words</a>
+<a href="/words-and-defs" class="btn btn-primary"> View Entire Dictionary </a>
+#if ($word)
+  <a href="/words/new" class="btn btn-danger"> Add Another New Word </a>
+#else
+    <a href="/words/new" class="btn btn-danger"> Add A New Word </a>
+#end
+<a href="/" class="btn btn-default"> Return To Homepage</a>

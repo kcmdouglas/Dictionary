@@ -1,0 +1,9 @@
+<h3>$word.getName()</h3>
+
+#foreach ($definition in $word.getDefinitions())
+  <h1>$task.getDescription()</h1>
+#end
+
+<a href="/words/$word.getId()/definitions/new" class="btn btn-warning">Add a New Definition</a>
+<a href="/words" class="btn btn-info">View All Words</a>
+<a href="/whole-dictionary" class="btn btn-primary">View Entire Dictionary</a>
