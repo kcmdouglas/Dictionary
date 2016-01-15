@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class DefinitionTest {
 
@@ -12,54 +13,43 @@ public class DefinitionTest {
       assertEquals(true, newDefiniton instanceof Definition);
   }
 
+  @Test
+  public void Definition_instantiatesWithDescription_true() {
+      Definition newDefinition= new Definition("To draw, paint, outline, or describe");
+      assertEquals("To draw, paint, outline, or describe", newDefinition.getDefinition());
+  }
+
+
+  @Test
+  public void all_returnsAllInstancesOfDefinition_true() {
+    Definition firstDefinition = new Definition("To draw, paint, outline, or describe");
+    Definition secondDefinition = new Definition("A type of soil good for growing plants");
+    assertTrue(Definition.all().contains(firstDefinition));
+    assertTrue(Definition.all().contains(secondDefinition));
+  }
+
+  @Test
+  public void newId_DefinitionsInstantiateWithAnID_true() {
+    Definition newDefinition = new Definition("To draw, paint, outline, or describe");
+    assertEquals(Definition.all().size(), newDefinition.getId());
+  }
+
+  @Test
+  public void find_returnsDefinitionWithSameId_secondDefinition() {
+    Definition firstDefinition = new Definition("To draw, paint, outline, or describe");
+    Definition secondDefinition = new Definition("A type of soil good for growing plants");
+    assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
+  }
+  //
   // @Test
-  // public void task_instantiatesWithDescription_true() {
-  //     Task testTask = new Task("Mow the lawn");
-  //     assertEquals("Mow the lawn", testTask.getDescription());
+  // public void find_returnsNullWhenNoDefinitionFound_null() {
+  //   assertTrue(Definition.find(999) == null);
   // }
   //
   // @Test
-  // public void isCompleted_isFalseAfterInstantiation_false() {
-  //   Task myTask = new Task("Mow the lawn");
-  //   assertEquals(false, myTask.isCompleted());
-  // }
-  //
-  // @Test
-  //  public void getCreatedAt_instantiatesWithCurrentTime_today() {
-  //    Task myTask = new Task("Mow the lawn");
-  //    assertEquals(LocalDateTime.now().getDayOfWeek(), myTask.getCreatedAt().getDayOfWeek());
-  //  }
-  //
-  // @Test
-  // public void all_returnsAllInstancesOfTask_true() {
-  //   Task firstTask = new Task("Mow the lawn");
-  //   Task secondTask = new Task("Buy groceries");
-  //   assertTrue(Task.all().contains(firstTask));
-  //   assertTrue(Task.all().contains(secondTask));
-  // }
-  //
-  // @Test
-  // public void newId_tasksInstantiateWithAnID_true() {
-  //   Task myTask = new Task("Mow the lawn");
-  //   assertEquals(Task.all().size(), myTask.getId());
-  // }
-  //
-  // @Test
-  // public void find_returnsTaskWithSameId_secondTask() {
-  //   Task firstTask = new Task("Mow the lawn");
-  //   Task secondTask = new Task("Buy groceries");
-  //   assertEquals(Task.find(secondTask.getId()), secondTask);
-  // }
-  //
-  // @Test
-  // public void find_returnsNullWhenNoTaskFound_null() {
-  //   assertTrue(Task.find(999) == null);
-  // }
-  //
-  // @Test
-  // public void clear_emptiesAllTasksFromArrayList() {
-  //   Task myTask = new Task("Mow the lawn");
-  //   Task.clear();
-  //   assertEquals(Task.all().size(), 0);
+  // public void clear_emptiesAllDefinitionsFromArrayList() {
+  //   Definition newDefinition = new Definition("To draw, paint, outline, or describe");
+  //   Definition.clear();
+  //   assertEquals(Definition.all().size(), 0);
   // }
 }

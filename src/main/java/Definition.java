@@ -7,8 +7,28 @@ public class Definition {
 
   public Definition(String definition){
     mDefinition = definition;
-    mId = definitions.size();
     definitions.add(this);
+    mId = definitions.size();
+  }
+
+  public String getDefinition(){
+    return mDefinition;
+  }
+
+  public static ArrayList<Definition> all(){
+    return definitions;
+  }
+
+  public int getId(){
+    return mId;
+  }
+
+  public static Definition find(int id) {
+    try {
+      return definitions.get(id-1);
+    } catch (IndexOutOfBoundsException ioobe) {
+      return null;
+    }
   }
 
   public static void clear() {
