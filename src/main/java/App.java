@@ -1,4 +1,3 @@
-import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -41,7 +40,6 @@ public class App {
 
     get("words/:id/definitions/new", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
       Word word = Word.find(Integer.parseInt(request.params(":id")));
       model.put("word", word);
       model.put("template", "templates/word-def-form.vtl");
@@ -69,7 +67,6 @@ public class App {
 
     get("words/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
       Word word = Word.find(Integer.parseInt(request.params(":id")));
       model.put("word", word);
       model.put("template", "templates/singleword.vtl");
@@ -78,13 +75,10 @@ public class App {
 
     get("/words-and-defs", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
       model.put("words", Word.all());
       model.put("definitions", Definition.all());
       model.put("template", "templates/words-and-defs.vtl");
       return new ModelAndView(model, layout);
       }, new VelocityTemplateEngine());
-
-
   }
 }
