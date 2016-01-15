@@ -1,0 +1,18 @@
+<h1>Your Entire Dictionary</h1>
+
+<div class="row">
+#foreach($word in $words)
+  <div class="col-md-4">
+    <h3><a href="/categories/$category.getId()">$category.getName()</a></h3>
+ #foreach ($defintion in $word.getDefinitions())
+   <li>$defintion.getDefinition()</li>
+ #end
+ </div>
+#end
+</div>
+
+<br>
+<br>
+<a href="/words"class="btn btn-info">View Your Words</a>
+<a href="/words/new" class="btn btn-danger"> Add A New Word </a>
+<a href="/" class="btn btn-default"> Return To Homepage</a>

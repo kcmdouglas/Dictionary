@@ -2,7 +2,11 @@
 
 
 <form action="/definitions" method="post">
-  <label for="definition">What's the word, bird?</label>
-  <input id="definition" name="definition" type="text" required>
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+
+  <div class="form-group">
+    <label for="definition">What's your definition?</label>
+    <input id="definition" name="definition" type="text" required>
+  </div>
   <button type="submit" class="btn btn-success">Add a New Definition</button>
 </form>
