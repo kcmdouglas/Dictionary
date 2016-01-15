@@ -1,11 +1,11 @@
 <h1>Your Entire Dictionary</h1>
-
+<br>
 <div class="row">
 #foreach($word in $words)
-  <div class="col-md-4">
-    <h3><a href="/categories/$category.getId()">$category.getName()</a></h3>
+  <div class="col-md-6">
+    <h3><a href="/words/$word.getId()">$word.getWord()</a></h3>
  #foreach ($defintion in $word.getDefinitions())
-   <li>$defintion.getDefinition()</li>
+   <li><h5>$defintion.getDefinition()</h5></li>
  #end
  </div>
 #end

@@ -1,9 +1,13 @@
-<h3>$word.getWord()</h3>
+<h1>$word.getWord()</h1>
 
+<ul>
 #foreach ($definition in $word.getDefinitions())
-  <h1>$definition.getDefinition()</h1>
+  <li><h3>$definition.getDefinition()</h3>
 #end
-
+</ul>
+<br>
 <a href="/words/$word.getId()/definitions/new" class="btn btn-warning">Add a New Definition</a>
+<br>
+<br>
 <a href="/words" class="btn btn-info">View All Words</a>
-<a href="/whole-dictionary" class="btn btn-primary">View Entire Dictionary</a>
+<a href="/words-and-defs" class="btn btn-primary">View Entire Dictionary</a>

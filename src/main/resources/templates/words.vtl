@@ -1,9 +1,9 @@
-<h1>All The Words In Your Dictionary:</h1>
-
+<h1>Every Word In Your Dictionary</h1>
+<br>
 #foreach ($word in $words)
   <li><h3><a href="/words/$word.getId()">$word.getWord()</a></h3></li>
 #end
-
+<br>
 <a href="/words/new" class="btn btn-danger"> Add A New Word </a>
 <a href="/words-and-defs" class="btn btn-primary"> View Entire Dictionary </a>
 <a href="/" class="btn btn-default"> Return To Homepage</a>
