@@ -14,7 +14,7 @@ public class DefinitionTest {
   }
 
   @Test
-  public void Definition_instantiatesWithDescription_true() {
+  public void Definition_instantiatesWithDefinition_true() {
       Definition newDefinition= new Definition("To draw, paint, outline, or describe");
       assertEquals("To draw, paint, outline, or describe", newDefinition.getDefinition());
   }
@@ -40,16 +40,16 @@ public class DefinitionTest {
     Definition secondDefinition = new Definition("A type of soil good for growing plants");
     assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
   }
-  //
-  // @Test
-  // public void find_returnsNullWhenNoDefinitionFound_null() {
-  //   assertTrue(Definition.find(999) == null);
-  // }
-  //
-  // @Test
-  // public void clear_emptiesAllDefinitionsFromArrayList() {
-  //   Definition newDefinition = new Definition("To draw, paint, outline, or describe");
-  //   Definition.clear();
-  //   assertEquals(Definition.all().size(), 0);
-  // }
+
+  @Test
+  public void find_returnsNullWhenNoDefinitionFound_null() {
+    assertTrue(Definition.find(999) == null);
+  }
+
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList() {
+    Definition newDefinition = new Definition("To draw, paint, outline, or describe");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
 }
